@@ -1,0 +1,179 @@
+html,body{
+    height: 100vh;
+}
+.logo{
+    width: 100px;
+}
+a{
+    color:#db6f47;
+}
+footer a{
+    color: #fff;
+}
+.carousel {
+    z-index: 2;
+    margin-top: 15px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.section{
+    background-color: #0E3D40;
+}
+.section:first-child{
+    height: 100%;
+}
+.section:nth-child(even){
+    background-color: #1C555D;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /*height: 100%;*/
+    width: 100%;
+}
+.btn-primary {
+    background-color: #db6f47;
+    border-color: #db6f47;
+}
+.btn-primary:hover {
+    background-color: #bf5f3b;
+    border-color: #bf5f3b;
+}
+.description .btn{
+    width: 100%;
+}
+
+.introduction {
+    position: relative;   
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 0;
+}
+.introduction img{
+    width: 91%;
+}
+.nome{
+    z-index: 3;
+    position: absolute;
+    top: 300px;
+    bottom: 0;
+    
+    right: 30px;
+    color: white;
+}
+.description{
+    padding-left: 20px;;
+    width: 180px;
+    z-index: 3;
+    position: absolute;
+    top: 15%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.go-down{
+    z-index: 3;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.introduction .highlight{
+    top: 325px;
+    right: 169px;
+    border-radius: 10px;
+    z-index: 2;
+    background-color:  #db6f47;
+    width: 20px;
+    height: 10px;
+}
+.accent{
+    color:#db6f47;
+}
+
+
+.blockquote-custom {
+    position: relative;
+    font-size: 1.1rem;
+  }
+  
+  .blockquote-custom-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -25px;
+    left: 50px;
+  }
+  .bg-info{
+    background-color: #db6f47 !important;
+  }
+  
+
+
+
+@media only screen and (min-width: 961px){
+.carousel {
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.carousel h2{
+    font-size: 45px;
+}
+
+
+.introduction {
+    flex-direction: row;
+    margin-left: 50px;
+}
+.introduction img{
+    width: 250px;
+    margin-left: 80px;
+}
+.nome{
+    z-index: 3;
+    position: absolute;
+    top: 300px;
+    bottom: 0;
+    right: 0;
+    left: 30px;
+    color: white;
+}
+.description{
+    padding-left: 20px;
+    width: 300px;
+    z-index: 3;
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    /*right: 100px;*/
+    left: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.go-down{
+    display: none;
+}
+.section:first-child{
+    height: auto;
+}
+}
+
