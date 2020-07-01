@@ -27,16 +27,17 @@ footer a{
 .section{
     background-color: #0E3D40;
 }
-.section:first-child{
-    height: 100%;
-}
 .section:nth-child(even){
     background-color: #1C555D;
 }
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+.mfullheight{
+    height: 100%;
 }
 body{
     /*height: 100%;*/
@@ -142,6 +143,10 @@ body{
 
 
 @media only screen and (min-width: 961px){
+    
+.mfullheight{
+    height:auto;
+}
 .carousel {
     align-items: flex-end;
     justify-content: flex-end;
