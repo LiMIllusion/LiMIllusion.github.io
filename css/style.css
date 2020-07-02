@@ -54,9 +54,11 @@ footer a{
 }
 .section:first-of-type .container{
     height: 100%;
+    height: -webkit-fill-available;
 }
 .section:first-of-type header{
     height: 100%;
+    height: -webkit-fill-available;
 }
 .section:nth-child(even){
     background-color: #1C555D;
