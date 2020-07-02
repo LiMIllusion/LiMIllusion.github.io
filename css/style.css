@@ -50,8 +50,8 @@ footer a{
 }
 
 .section:first-of-type{
-    height: 100%;
-    display: standalone;
+    height: 100vh;
+    height: -webkit-fill-available;
 }
 .section:first-of-type .container{
     height: 100%;
