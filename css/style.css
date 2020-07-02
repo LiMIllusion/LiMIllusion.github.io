@@ -102,9 +102,11 @@ body{
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin: 0;
+    bottom:0;
 }
 .introduction img{
     height: 70vh;
+    max-height: 400px;
     
 }
 .nome{
