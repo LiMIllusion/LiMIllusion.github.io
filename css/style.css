@@ -3,7 +3,8 @@ html,body{
     height: 100vh;
 }
 .logo{
-    width: 100px;
+    width: 20vmax;
+    max-width: 100px;
 }
 a{
     color:#db6f47;
@@ -30,6 +31,12 @@ footer a{
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+}
+.carousel h2{
+    font-size: 3vmax;
+}
+.introduction{
+    font-size: 2vmax;
 }
 .section{
     background-color: #0E3D40;
@@ -89,12 +96,13 @@ body{
     margin: 0;
 }
 .introduction img{
-    width: 91%;
+    height: 70vh;
+    
 }
 .nome{
     z-index: 3;
     position: absolute;
-    top: 300px;
+    top: 40vh;
     bottom: 0;
     
     right: 30px;
@@ -210,8 +218,10 @@ body{
         -ms-flex-direction: row;
             flex-direction: row;
     margin-left: 50px;
+    font-size: 18px;
 }
 .introduction img{
+    height: auto;
     width: 250px;
     margin-left: 80px;
 }
@@ -250,3 +260,14 @@ body{
     height: auto;
 }
 }
+
+/*
+.nome{
+    z-index: 3;
+    position: absolute;
+    top: 300px;
+    bottom: 0;
+    
+    right: 30px;
+    color: white;
+}*/
