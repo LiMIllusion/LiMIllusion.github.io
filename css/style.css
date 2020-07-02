@@ -105,7 +105,6 @@ body{
 }
 .introduction img{
     height: 67vh;
-    max-height: 400px;
 }
 .nome{
     z-index: 3;
