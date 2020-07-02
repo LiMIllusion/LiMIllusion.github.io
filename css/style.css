@@ -9,7 +9,7 @@ html,body{
     height: 100%;
 }*/
 .logo{
-    width: 15vmax;
+    width: 20vmax;
     max-width: 100px;
 }
 a{
@@ -49,16 +49,14 @@ footer a{
 }
 
 .section:first-of-type{
-    height: 100%;
+    height: 100vh;
     height: -webkit-fill-available;
 }
 .section:first-of-type .container{
     height: 100%;
-    height: -webkit-fill-available;
 }
 .section:first-of-type header{
     height: 100%;
-    height: -webkit-fill-available;
 }
 .section:nth-child(even){
     background-color: #1C555D;
