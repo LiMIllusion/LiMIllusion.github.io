@@ -53,12 +53,12 @@ footer a{
     height: 100vh;
     height: -webkit-fill-available;
 }
-.section:first-of-type .container{
+/*.section:first-of-type .container{
     height: 100%;
 }
 .section:first-of-type header{
     height: 100%;
-}
+}*/
 .section:nth-child(even){
     background-color: #1C555D;
 }
@@ -104,7 +104,7 @@ body{
     margin: 0;
 }
 .introduction img{
-    height: 67vh;
+    height: 70vh;
 }
 .nome{
     z-index: 3;
