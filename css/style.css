@@ -44,6 +44,7 @@ footer a{
 
 .section:first-of-type{
     height: 100vh;
+    display: standalone;
 }
 .section:first-of-type .container{
     height: 100%;
