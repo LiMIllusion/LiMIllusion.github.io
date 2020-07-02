@@ -1,7 +1,14 @@
 
+html{
+    height: -webkit-fill-available;
+}
+body{
+    height: 100vh;
+    height: -webkit-fill-available;
+}/*
 html,body{
     height: 100%;
-}
+}*/
 .logo{
     width: 20vmax;
     max-width: 100px;
