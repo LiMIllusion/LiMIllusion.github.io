@@ -49,7 +49,7 @@ footer a{
 }
 
 .section:first-of-type{
-    height: 100vh;
+    height: 100%;
     height: -webkit-fill-available;
 }
 .section:first-of-type .container{
