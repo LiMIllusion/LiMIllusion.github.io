@@ -48,7 +48,7 @@ footer a{
     background-color: #0E3D40;
 }
 
-.section:first-of-type{
+/*.section:first-of-type{
     height: 100vh;
     height: -webkit-fill-available;
 }
@@ -57,7 +57,7 @@ footer a{
 }
 .section:first-of-type header{
     height: 100%;
-}
+}*/
 .section:nth-child(even){
     background-color: #1C555D;
 }
