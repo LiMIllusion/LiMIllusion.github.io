@@ -35,7 +35,7 @@
             };
             let fullscreen = document.getElementById("#first")
             if (window.mobileCheck){
-                fullscreen.style.height = window.innerHeight;
+                fullscreen.style.height = document.documentElement.clientHeight;//window.innerHeight;
             }
         </script>
         <div class="container">
