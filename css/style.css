@@ -104,6 +104,7 @@ body{
 }
 .introduction img{
     height: 70vh;
+    width: auto;
 }
 .nome{
     z-index: 3;

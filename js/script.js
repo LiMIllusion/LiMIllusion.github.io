@@ -9,11 +9,13 @@ let fullscreen = document.getElementById("first")
 if (window.mobileCheck) {
     fullscreen.style.height = window.innerHeight;
 }
-
 let propic = document.getElementById("propic");
-if (window.mobileCheck) {
-    propic.style.height = window.innerHeight*0,01*71;
-}
+propic.addEventListener("load", function () {
+    if (window.mobileCheck) {
+        propic.style.height = window.innerHeight*0.01*71;
+    }
+    });
+
 
 var TxtRotate = function (el, toRotate, period) {
     this.toRotate = toRotate;
