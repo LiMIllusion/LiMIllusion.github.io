@@ -7,12 +7,12 @@ window.mobileCheck = function () {
 
 let fullscreen = document.getElementById("first")
 if (window.mobileCheck) {
-    fullscreen.style.height = window.innerHeight;
+    fullscreen.style.height = window.innerHeight/window.devicePixelRatio ;
 }
 let propic = document.getElementById("propic");
 propic.addEventListener("load", function () {
     if (window.mobileCheck) {
-        propic.style.height = window.innerHeight*0.01*71;
+        propic.style.height = (window.innerHeight/window.devicePixelRatio)*0.01*71;
     }
     });
 
