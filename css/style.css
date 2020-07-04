@@ -26,6 +26,9 @@ a:hover{
 .btn a{
     color:#fff;
     text-decoration: none;
+    font-size: 2vh;
+    font-size: calc(var(--vh, 1vh)*2);
+
 }
 footer a{
     color: #fff;
@@ -44,8 +47,8 @@ footer a{
             justify-content: center;
 }
 .carousel h2{
-    font-size: 3vh;
-    font-size: calc(var(--vh, 1vh)*3);
+    font-size: 4vh;
+    font-size: calc(var(--vh, 1vh)*4);
 }
 .introduction{
     font-size: 2vh;
@@ -123,6 +126,10 @@ body{
     
     right: 30px;
     color: white;
+}
+.nome h1{
+    font-size: 6vh;
+    font-size: calc(var(--vh, 1vh)*6);
 }
 .description{
     padding-left: 20px;;
