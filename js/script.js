@@ -4,15 +4,16 @@ window.mobileCheck = function () {
         return check;
 };
 
+let screenSize = (ionic.Platform.isIOS()) ? window.screen.height : window.innerHeight * window.devicePixelRatio;
 
 let fullscreen = document.getElementById("first")
 if (window.mobileCheck) {
-    fullscreen.style.height = window.innerHeight/window.devicePixelRatio ;
+    fullscreen.style.height = screenSize;
 }
 let propic = document.getElementById("propic");
 propic.addEventListener("load", function () {
     if (window.mobileCheck) {
-        propic.style.height = (window.innerHeight/window.devicePixelRatio)*0.01*71;
+        propic.style.height = screenSize*0.01*71;
     }
     });
 
