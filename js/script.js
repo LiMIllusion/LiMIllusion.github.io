@@ -4,7 +4,7 @@ window.mobileCheck = function () {
         return check;
 };
 
-let screenSize = (ionic.Platform.isIOS()) ? window.screen.height : window.innerHeight * window.devicePixelRatio;
+let screenSize = (navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)) ? window.screen.height : window.innerHeight * window.devicePixelRatio;
 
 let fullscreen = document.getElementById("first")
 if (window.mobileCheck) {
