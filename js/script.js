@@ -8,7 +8,7 @@ window.mobileCheck = function () {
 let vh = window.innerHeight*0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`)
 
-let screenSize = (navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)) ? window.screen.height : window.innerHeight * window.devicePixelRatio;
+/*let screenSize = (navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)) ? window.screen.height : window.innerHeight * window.devicePixelRatio;
 
 let fullscreen = document.getElementById("first")
 let propic = document.getElementById("propic");
@@ -22,7 +22,7 @@ if (window.mobileCheck) {
         }
         });
 }
-
+*/
 
 
 
