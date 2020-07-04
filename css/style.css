@@ -44,10 +44,12 @@ footer a{
             justify-content: center;
 }
 .carousel h2{
-    font-size: 3vmax;
+    font-size: 3vh;
+    font-size: calc(var(--vh, 1vh)*3);
 }
 .introduction{
-    font-size: 2vmax;
+    font-size: 2vh;
+    font-size: calc(var(--vh, 1vh)*2);
 }
 .section{
     background-color: #0E3D40;
@@ -116,6 +118,7 @@ body{
     z-index: 3;
     position: absolute;
     top: 40vh;
+    top: calc(var(--vh, 1vh)*40);
     bottom: 0;
     
     right: 30px;
@@ -144,7 +147,8 @@ body{
 .go-down{
     z-index: 3;
     position: absolute;
-    bottom: 7vh;
+    bottom: 3vh;
+    bottom: calc(var(--vh, 1vh)*3);
     left: 0;
     width: 100%;
     display: -webkit-box;
