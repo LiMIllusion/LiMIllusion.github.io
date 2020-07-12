@@ -81,11 +81,19 @@ window.onload = function () {
     css.type = "text/css";
     css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
     document.body.appendChild(css);
+    
 };
 
 $(function () {
-    $("#go-down").on('click', function (e) {
+    $(".godown").on('click', function (e) {
         e.preventDefault();
         $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top }, 500, 'linear');
     });
 });
+
+$(function(){
+    $("#link-not-active").on("click", function(e){
+        e.preventDefault();
+        alert("Sono spiacente, ma al momento non ci sono altri progetti");
+    })
+})
