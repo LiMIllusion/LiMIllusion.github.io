@@ -5,26 +5,11 @@ window.mobileCheck = function () {
         return check;
 };
 
-let vh = window.innerHeight*0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`)
-
-/*let screenSize = (navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)) ? window.screen.height : window.innerHeight * window.devicePixelRatio;
-
-let fullscreen = document.getElementById("first")
-let propic = document.getElementById("propic");
-
-
-if (window.mobileCheck) {
-    fullscreen.style.height = screenSize;
-    propic.addEventListener("load", function () {
-        if (window.mobileCheck) {
-            propic.style.height = screenSize*0.01*71;
-        }
-        });
-}
-*/
-
-
+window.addEventListener('resize', () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
 
 var TxtRotate = function (el, toRotate, period) {
     this.toRotate = toRotate;
