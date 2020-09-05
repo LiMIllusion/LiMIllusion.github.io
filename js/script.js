@@ -79,18 +79,23 @@ window.onload = function () {
 
 $(function () {
     $(".godown").on('click', function (e) {
-        e.StopPropagation();
-        e.StopImmediatePropragation();
         e.preventDefault();
         $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top }, 500, 'linear');
     });
 });
 
 $(function(){
-    $(".link-not-active").forEach(function(el){
-        el.on("click", function(e){
+    $(".link-not-active").on("click", function(e){
             e.preventDefault();
-            alert("Sono spiacente, ma al momento non ci sono altri progetti");
+            alert("Sono spiacente, ma al momento questa pagina non è ancora pubblica");            
         })
-    });
-})
+    })
+
+
+/*
+$(function(){
+    $("#link-not-active").on("click", function(e){
+        e.preventDefault();
+        alert("Sono spiacente, ma al momento questa pagina non è ancora pubblica");
+    })
+})*/
