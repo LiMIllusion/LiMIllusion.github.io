@@ -87,8 +87,8 @@ $(function () {
 });
 
 $(function(){
-    $(".link-not-active").each(function(this){
-        this.on("click", function(e){
+    $(".link-not-active").each(function(el){
+        el.on("click", function(e){
             e.preventDefault();
             alert("Sono spiacente, ma al momento non ci sono altri progetti");
         })
