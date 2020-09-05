@@ -87,8 +87,10 @@ $(function () {
 });
 
 $(function(){
-    $(".link-not-active").on("click", function(e){
-        e.preventDefault();
-        alert("Sono spiacente, ma al momento non ci sono altri progetti");
-    })
+    $(".link-not-active").each(function(this){
+        this.on("click", function(e){
+            e.preventDefault();
+            alert("Sono spiacente, ma al momento non ci sono altri progetti");
+        })
+    });
 })
