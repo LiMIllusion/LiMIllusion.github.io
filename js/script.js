@@ -79,6 +79,8 @@ window.onload = function () {
 
 $(function () {
     $(".godown").on('click', function (e) {
+        e.StopPropagation();
+        e.StopImmediatePropragation();
         e.preventDefault();
         $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top }, 500, 'linear');
     });
