@@ -87,7 +87,7 @@ body{
     background-color: #db6f47;
     border-color: #db6f47;
 }
-.btn:hover {
+.btn:active {
     background-color: #bf5f3b;
     border-color: #bf5f3b;
 }
