@@ -91,6 +91,10 @@ body{
     background-color: #bf5f3b;
     border-color: #bf5f3b;
 }
+.btn-primary:active {
+    background-color: #bf5f3b;
+    border-color: #bf5f3b;
+}
 .description .btn{
     width: 100%;
 }
