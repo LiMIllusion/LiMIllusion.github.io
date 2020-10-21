@@ -6,13 +6,11 @@ window.mobileCheck = function () {
 };
 
 //window.addEventListener('resize', () => {
-    // We execute the same script as before
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 //});
 if(!mobileCheck){
     window.addEventListener('resize', () => {
-        // We execute the same script as before
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     });
@@ -69,7 +67,6 @@ window.onload = function () {
             new TxtRotate(elements[i], JSON.parse(toRotate), period);
         }
     }
-    // INJECT CSS
     var css = document.createElement("style");
     css.type = "text/css";
     css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
@@ -92,10 +89,3 @@ $(function(){
     })
 
 
-/*
-$(function(){
-    $("#link-not-active").on("click", function(e){
-        e.preventDefault();
-        alert("Sono spiacente, ma al momento questa pagina non è ancora pubblica");
-    })
-})*/
