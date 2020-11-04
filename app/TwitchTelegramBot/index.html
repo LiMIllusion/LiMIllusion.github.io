@@ -13,6 +13,10 @@
     </p>
 </body>
     <script>
-        document.querySelector("#code").innerHTML = document.location.hash
+        var url_string = window.location.href
+        var url = new URL(url_string);
+        var c = url.searchParams.get("c");
+        console.log(c);
+        document.querySelector("#code").innerHTML = c
     </script>
 </html>
