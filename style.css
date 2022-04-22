@@ -1,0 +1,40 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    height: -webkit-fill-available;
+}
+
+.background-gray {
+    background-color: #1D1E20;
+}
+
+.text-orange {
+    color: #DB6F47
+}
+
+.justify-text {
+    text-align: justify;
+}
+
+.border-color-green {
+    border-color: #1C555D !important;
+}
+
+.opacity-15 {
+    opacity: 0.25;
+}
+
+.w-15 {
+    width: 10%!important;
+}
+
+@media screen and (min-width: 480px) {
+    .col-md-6-with-border {
+        flex: 0 0 auto;
+        width: 50%;
+        border-right: 1px solid;
+    }
+}
