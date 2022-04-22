@@ -32,7 +32,12 @@ body {
 .w-15 {
     width: 10%!important;
 }
-
+footer a{
+    color: #fff;
+}
+a:hover{
+    color:#DB6F47;
+}
 @media screen and (min-width: 480px) {
     .col-md-6-with-border {
         flex: 0 0 auto;
