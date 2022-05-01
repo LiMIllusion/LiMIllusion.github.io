@@ -38,7 +38,7 @@ body {
 .z-2 > *{
     z-index: 2;
 }
-footer a{
+nav a{
     color: #fff;
 }
 a:hover{
