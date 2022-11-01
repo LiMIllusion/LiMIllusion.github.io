@@ -29,6 +29,10 @@ body {
     opacity: 0.25;
 }
 
+.opacity-80 {
+    opacity: 0.80;
+}
+
 .w-15 {
     width: 10%!important;
 }
@@ -38,10 +42,22 @@ body {
 .z-2 > *{
     z-index: 2;
 }
-nav a{
-    color: #fff;
+a{
+    color: rgb(240, 240, 240);
 }
 a:hover{
+    color:#fff;
+}
+a > .tech:hover{
+    color:#f07a50;
+}
+a > .stories:hover{
+    color:#57c75a;
+}
+.stories{
+    color:#4caf50;
+}
+.tech{
     color:#DB6F47;
 }
 @media screen and (min-width: 480px) {
@@ -50,4 +66,13 @@ a:hover{
         width: 50%;
         border-right: 1px solid;
     }
+}
+
+.list-group-item{
+    background-color: #4c4c4c1e;
+    border: 1.5px solid rgba(255,255,255,.125);
+}
+
+li > * {
+    padding: 10px;
 }
