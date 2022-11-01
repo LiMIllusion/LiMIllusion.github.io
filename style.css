@@ -72,3 +72,7 @@ a > .stories:hover{
     background-color: #4c4c4c1e;
     border: 1.5px solid rgba(255,255,255,.125);
 }
+
+li > * {
+    padding: 10px;
+}
