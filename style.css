@@ -48,16 +48,16 @@ a{
 a:hover{
     color:#fff;
 }
-a.tech:hover{
+a > .tech:hover{
     color:#f07a50;
 }
-a.stories:hover{
+a > .stories:hover{
     color:#57c75a;
 }
-a.stories{
+.stories{
     color:#4caf50;
 }
-a.tech{
+.tech{
     color:#DB6F47;
 }
 @media screen and (min-width: 480px) {
