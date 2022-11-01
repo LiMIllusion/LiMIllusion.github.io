@@ -29,6 +29,10 @@ body {
     opacity: 0.25;
 }
 
+.opacity-80 {
+    opacity: 0.80;
+}
+
 .w-15 {
     width: 10%!important;
 }
@@ -44,10 +48,20 @@ nav a{
 a:hover{
     color:#DB6F47;
 }
+a.stories{
+    color:#4caf50;
+}
+a.tech{
+    color:#DB6F47;
+}
 @media screen and (min-width: 480px) {
     .col-md-6-with-border {
         flex: 0 0 auto;
         width: 50%;
         border-right: 1px solid;
     }
+}
+
+.list-group-item{
+    background-color: rgba(255, 255, 255, 0.95);
 }
