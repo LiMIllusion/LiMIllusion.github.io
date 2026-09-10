@@ -78,7 +78,7 @@ body {
 .orb-1 {
   width: 520px; height: 520px;
   top: -140px; left: -120px;
-  animation-duration: 22s;
+  animation-duration: 12s;
   animation-delay: 0s;
 }
 .orb-1 .orb-inner {
@@ -89,7 +89,7 @@ body {
 .orb-2 {
   width: 420px; height: 420px;
   bottom: -100px; right: -100px;
-  animation-duration: 28s;
+  animation-duration: 16s;
   animation-direction: reverse;
   animation-delay: 0s;
 }
@@ -101,7 +101,7 @@ body {
 .orb-3 {
   width: 320px; height: 320px;
   top: 40%; left: 42%;
-  animation-duration: 17s;
+  animation-duration: 10s;
   animation-delay: 0s;
 }
 .orb-3 .orb-inner {
@@ -111,11 +111,12 @@ body {
 
 /* Drift: solo transform, nessuna opacity */
 @keyframes orbDrift {
-  0%   { transform: translate(0px,    0px)   scale(1);    }
-  25%  { transform: translate(40px,  -35px)  scale(1.05); }
-  50%  { transform: translate(-15px,  50px)  scale(0.96); }
-  75%  { transform: translate(30px,   20px)  scale(1.03); }
-  100% { transform: translate(0px,    0px)   scale(1);    }
+  0%   { transform: translate(  0px,    0px) scale(1);    }
+  20%  { transform: translate( 90px,  -70px) scale(1.08); }
+  40%  { transform: translate(-60px,  100px) scale(0.93); }
+  60%  { transform: translate( 80px,   60px) scale(1.06); }
+  80%  { transform: translate(-40px,  -80px) scale(0.96); }
+  100% { transform: translate(  0px,    0px) scale(1);    }
 }
 
 /* FadeIn: solo opacity, nessun transform */
@@ -210,21 +211,6 @@ body {
 }
 
 
-/* ---- Logo LiM — sfondo globale, alto a sinistra ---- */
-.hero-logo-bg {
-  position: fixed;
-  top: 1.5rem;
-  left: 1.5rem;
-  width: clamp(60px, 9vmin, 110px);
-  opacity: 0;
-  z-index: 0;
-  pointer-events: none;
-  animation: logoBgIn 1.2s 0.3s var(--ease) forwards;
-}
-@keyframes logoBgIn {
-  from { opacity: 0; transform: translate(-8px, -8px); }
-  to   { opacity: 0.22; transform: translate(0, 0); }
-}
 
 
 .name-wrap {
