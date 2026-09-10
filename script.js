@@ -1,16 +1,16 @@
 /* ============================================================
-   ✏️  CONFIGURAZIONE — modifica qui nome, bio, skills e link
+   ✏️ CONFIGURATION — edit name, bio, skills and links here
    ============================================================ */
 const CONFIG = {
 
-  /* --- Info personale --- */
+  /* --- Personal info --- */
   name: "Luca Cesta",
   aka: "LiM",
-  bio: "Appassionato di informatica, affascinato dal mondo dell'internet.<br>Uno <span class='accent'>smanettone</span>, ndr.",
+  bio: "Appassionato di informatica, affascinato dal mondo.<br>Uno <span class='accent'>smanettone</span>, ndr.",
 
-  /* --- Skill tags (aggiungi o rimuovi a piacere) ---
-     icon: classe Font Awesome (es. "fa-brands fa-python")
-     label: testo del tag */
+  /* --- Skill tags (add or remove as needed) ---
+     icon: Font Awesome class (e.g. "fa-brands fa-python")
+     label: tag text */
   skills: [
     { icon: "fa-solid fa-server", label: "SysAdmin" },
     { icon: "fa-brands fa-microsoft", label: "Azure" },
@@ -21,11 +21,11 @@ const CONFIG = {
     { icon: "fa-brands fa-node-js", label: "Node.js" },
   ],
 
-  /* --- Gruppi di link nel pannello destro ---
-     Ogni gruppo ha:
-       emoji:  emoji del titolo sezione
-       title:  testo del titolo
-       links:  array di link con { icon, label, href, badge (opzionale), badgeClass }
+  /* --- Link groups in the right panel ---
+     Each group has:
+       emoji:  section title emoji
+       title:  section title text
+       links:  array of links with { icon, label, href, badge (optional), badgeClass }
                  badgeClass: "badge-tech" | "badge-stories" | "badge-oss" | "" */
   linkGroups: [
     {
@@ -86,7 +86,7 @@ const CONFIG = {
 
 };
 /* ============================================================
-   ☝️  Fine configurazione — non serve modificare sotto
+   ☝️ End of configuration — no need to edit below
    ============================================================ */
 
 
@@ -135,7 +135,7 @@ const CONFIG = {
 })();
 
 /* ---- Subtle mouse parallax on background gradient only ---- */
-/* (Gli orb usano orbDrift CSS — non tocchiamo il loro transform) */
+/* Orbs use the CSS orbDrift animation — their transform is not touched here */
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const bg = document.querySelector('.bg-gradient');
@@ -147,9 +147,9 @@ const CONFIG = {
     raf = requestAnimationFrame(() => {
       const cx = window.innerWidth / 2;
       const cy = window.innerHeight / 2;
-      const dx = (e.clientX - cx) / cx;  /* -1 … +1 */
+      const dx = (e.clientX - cx) / cx;  /* normalized range: -1 to +1 */
       const dy = (e.clientY - cy) / cy;
-      /* Sposta leggermente il background per effetto profondità */
+      /* Shift the background slightly for a depth effect */
       bg.style.backgroundPosition = `${50 + dx * 3}% ${50 + dy * 3}%`;
     });
   }, { passive: true });

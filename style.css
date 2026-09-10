@@ -23,12 +23,12 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
-  /* dvh: tiene conto della barra URL mobile */
+  /* dvh: accounts for the mobile URL bar */
   height: 100%;
 }
 body {
   min-height: 100dvh;
-  /* Scroll solo se il contenuto non entra — mai clippato */
+  /* Scroll only if content overflows — never clipped */
   overflow-y: auto;
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
@@ -52,17 +52,17 @@ body {
 
 /* ---- Floating orbs ---- */
 /*
-  FIX: Il problema era che orbDrift e orbAppear usano entrambi `transform`,
-  quindi si sovrascrivono. Soluzione: ogni orb ha un wrapper per il drift
-  e l'elemento interno per il colore/blur. Il JS muove il wrapper.
-  Qui usiamo due strati: .orb (wrapper drift) → .orb-inner (colore + fadeIn).
+  Each orb uses two layers to avoid transform conflicts:
+  .orb handles the drift animation (transform), while .orb-inner handles
+  the fade-in (opacity only). This prevents the two animations from
+  overriding each other's transform property.
 */
 .orb {
   position: fixed;
   border-radius: 50%;
   z-index: 0;
   pointer-events: none;
-  /* Il drift via CSS usa translate su questo elemento */
+  /* CSS drift animation applies translate to this element */
   animation: orbDrift linear infinite;
 }
 
@@ -70,7 +70,7 @@ body {
   width: 100%; height: 100%;
   border-radius: 50%;
   filter: blur(80px);
-  /* FadeIn solo su opacity — nessun conflitto con il transform del wrapper */
+  /* Fade-in on opacity only — no conflict with the wrapper's transform */
   opacity: 0;
   animation: orbFadeIn 1.4s var(--ease) forwards;
 }
@@ -109,7 +109,7 @@ body {
   animation-delay: 0.6s;
 }
 
-/* Drift: solo transform, nessuna opacity */
+/* Drift: transform only, no opacity */
 @keyframes orbDrift {
   0%   { transform: translate(  0px,    0px) scale(1);    }
   20%  { transform: translate( 90px,  -70px) scale(1.08); }
@@ -119,7 +119,7 @@ body {
   100% { transform: translate(  0px,    0px) scale(1);    }
 }
 
-/* FadeIn: solo opacity, nessun transform */
+/* Fade-in: opacity only, no transform */
 @keyframes orbFadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -143,7 +143,7 @@ body {
   position: relative; z-index: 1;
   min-height: 100dvh;
   display: flex; align-items: center; justify-content: center;
-  /* Padding fluido: più spazio sui monitor grandi, meno sui piccoli */
+  /* Fluid padding: more space on large screens, less on small ones */
   padding: clamp(1rem, 3vw, 2.5rem);
 }
 
@@ -151,7 +151,7 @@ body {
   width: 100%; max-width: 1100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* Gap fluido */
+  /* Fluid gap */
   gap: clamp(1rem, 2vw, 1.75rem);
   align-items: stretch;
 }
@@ -164,7 +164,7 @@ body {
   border: 1px solid var(--glass-border);
   border-radius: clamp(16px, 2vw, 24px);
   box-shadow: var(--shadow);
-  /* Padding fluido: spazioso su desktop, compatto su mobile */
+  /* Fluid padding: roomy on desktop, compact on mobile */
   padding: clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 3vw, 2.2rem);
   position: relative; overflow: hidden;
 
@@ -203,7 +203,7 @@ body {
   transition: border-color .3s var(--ease);
 }
 
-/* Hero card: flex colonna centrata verticalmente */
+/* Hero card: flex column, vertically centered */
 .card-hero {
   display: flex;
   flex-direction: column;
@@ -223,7 +223,7 @@ body {
 
 .name {
   font-family: 'Space Grotesk', sans-serif;
-  /* Fluido: 1.7rem su mobile stretto, sale fino a 3rem su desktop */
+  /* Fluid: 1.7rem on narrow mobile, scales up to 3rem on desktop */
   font-size: clamp(1.7rem, 4vw, 3rem);
   font-weight: 700; letter-spacing: -.025em; line-height: 1.05;
 }
@@ -337,7 +337,7 @@ body {
 
 /* ---- Responsive ---- */
 
-/* Schermi medi: laptop piccoli, tablet landscape */
+/* Medium screens: small laptops, landscape tablets */
 @media (max-width: 960px) {
   .name-wrap { margin-bottom: .9rem; }
   .bio       { margin-bottom: .9rem; }
@@ -346,7 +346,7 @@ body {
   .link-group { padding: .75rem 1rem; }
 }
 
-/* Tablet portrait e telefoni grandi: colonna singola */
+/* Portrait tablets and large phones: single column */
 @media (max-width: 680px) {
   .grid {
     grid-template-columns: 1fr;
@@ -357,14 +357,14 @@ body {
   .hero-logo-bg { width: clamp(44px, 8vmin, 70px); }
 }
 
-/* Telefoni piccoli */
+/* Small phones */
 @media (max-width: 400px) {
   .orb-1 { width: 200px; height: 200px; }
   .orb-2 { width: 160px; height: 160px; }
   .name  { font-size: 1.6rem; }
 }
 
-/* Schermi molto bassi (es. laptop 768px di altezza) */
+/* Very short screens (e.g. laptops with 768px height) */
 @media (max-height: 700px) and (min-width: 681px) {
   .page { align-items: flex-start; padding-top: 1.5rem; padding-bottom: 1.5rem; }
   .name-wrap { margin-bottom: .6rem; }

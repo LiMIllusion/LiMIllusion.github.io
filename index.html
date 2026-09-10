@@ -26,9 +26,9 @@
   <div class="bg-gradient"></div>
 
   <!--
-    FIX ORB: ogni .orb fa il drift (transform CSS),
-    il figlio .orb-inner fa il fade-in (opacity CSS).
-    I due transform non si sovrascrivono più.
+    Each .orb handles the drift animation (CSS transform);
+    its child .orb-inner handles the fade-in (CSS opacity).
+    The two animations no longer conflict on the transform property.
   -->
   <div class="orb orb-1">
     <div class="orb-inner"></div>
@@ -40,7 +40,7 @@
     <div class="orb-inner"></div>
   </div>
 
-  <!-- Propic watermark angolo in basso a destra -->
+  <!-- Profile picture watermark, bottom-right corner -->
   <img src="propic.svg" alt="" class="propic-watermark" aria-hidden="true">
 
   <!-- Page -->
@@ -51,7 +51,7 @@
       <article class="card card-hero" id="card-hero">
         <div class="card-shine"></div>
 
-        <!-- Nome + aka in alto a destra -->
+        <!-- Name + aka -->
         <div class="name-wrap">
           <h1 class="name"><!-- filled by JS --></h1>
           <p class="aka"><!-- filled by JS --></p>
