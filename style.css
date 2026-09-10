@@ -175,7 +175,8 @@ body {
 .card-links { animation-delay: .25s; }
 
 @keyframes cardIn {
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* Top-left glass highlight */
@@ -291,7 +292,8 @@ body {
 }
 
 @keyframes groupIn {
-  to { opacity: 1; transform: translateX(0); }
+  from { opacity: 0; transform: translateX(22px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 .group-title {

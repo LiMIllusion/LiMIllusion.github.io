@@ -82,5 +82,5 @@ Works in all modern browsers that support `backdrop-filter`. For older browsers 
 
 ## AI disclosure
 
-> **This codebase was written with the assistance of an AI coding tool ([Antigravity](https://antigravity.dev) by Google DeepMind).**
+> **This codebase was written with the assistance of an AI coding tool ([Antigravity](https://antigravity.google) by Google DeepMind).**
 >
