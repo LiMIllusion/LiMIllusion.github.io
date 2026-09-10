@@ -1,78 +1,352 @@
-html {
-    height: 100%;
+/* ============================================================
+   GLASSMORPHISM PORTFOLIO — LiMIllusion
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* ---- Tokens ---- */
+:root {
+  --orange:        #f07a50;
+  --orange-light:  #ff9a72;
+  --orange-dim:    rgba(240, 122, 80, 0.18);
+  --orange-border: rgba(240, 122, 80, 0.35);
+  --glass-bg:      rgba(255, 255, 255, 0.055);
+  --glass-border:  rgba(255, 255, 255, 0.13);
+  --glass-blur:    blur(22px);
+  --shadow:        0 8px 40px rgba(0, 0, 0, 0.45);
+  --text:          rgba(255, 255, 255, 0.92);
+  --text-muted:    rgba(255, 255, 255, 0.50);
+  --ease:          cubic-bezier(.4, 0, .2, 1);
 }
 
-body {
-    height: 100%;
-    height: -webkit-fill-available;
-    height: 100vh;
-    height: calc(var(--vh, 1vh)*100);
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
 }
 
-.background-gray {
-    background-color: #1D1E20;
+/* ---- Animated gradient background ---- */
+.bg-gradient {
+  position: fixed; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 15%, rgba(110, 50, 200, 0.4) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 70% at 85% 85%, rgba(240, 122, 80, 0.28) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 55% at 50% 50%, rgba(20, 40, 110, 0.5) 0%, transparent 75%),
+    linear-gradient(135deg, #07071a 0%, #0c0c20 50%, #100e1c 100%);
+  animation: bgPulse 14s ease-in-out infinite alternate;
+}
+@keyframes bgPulse {
+  from { filter: hue-rotate(0deg) brightness(1);   }
+  to   { filter: hue-rotate(18deg) brightness(1.06); }
 }
 
-.text-orange {
-    color: #DB6F47
+/* ---- Floating orbs ---- */
+/*
+  FIX: Il problema era che orbDrift e orbAppear usano entrambi `transform`,
+  quindi si sovrascrivono. Soluzione: ogni orb ha un wrapper per il drift
+  e l'elemento interno per il colore/blur. Il JS muove il wrapper.
+  Qui usiamo due strati: .orb (wrapper drift) → .orb-inner (colore + fadeIn).
+*/
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+  /* Il drift via CSS usa translate su questo elemento */
+  animation: orbDrift linear infinite;
 }
 
-.justify-text {
-    text-align: justify;
+.orb-inner {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  filter: blur(80px);
+  /* FadeIn solo su opacity — nessun conflitto con il transform del wrapper */
+  opacity: 0;
+  animation: orbFadeIn 1.4s var(--ease) forwards;
 }
 
-.border-color-green {
-    border-color: #1C555D !important;
+.orb-1 {
+  width: 520px; height: 520px;
+  top: -140px; left: -120px;
+  animation-duration: 22s;
+  animation-delay: 0s;
+}
+.orb-1 .orb-inner {
+  background: radial-gradient(circle, rgba(150, 70, 240, 0.7), transparent 70%);
+  animation-delay: 0s;
 }
 
-.opacity-15 {
-    opacity: 0.25;
+.orb-2 {
+  width: 420px; height: 420px;
+  bottom: -100px; right: -100px;
+  animation-duration: 28s;
+  animation-direction: reverse;
+  animation-delay: 0s;
+}
+.orb-2 .orb-inner {
+  background: radial-gradient(circle, rgba(240, 122, 80, 0.65), transparent 70%);
+  animation-delay: 0.3s;
 }
 
-.opacity-80 {
-    opacity: 0.80;
+.orb-3 {
+  width: 320px; height: 320px;
+  top: 40%; left: 42%;
+  animation-duration: 17s;
+  animation-delay: 0s;
+}
+.orb-3 .orb-inner {
+  background: radial-gradient(circle, rgba(60, 160, 240, 0.55), transparent 70%);
+  animation-delay: 0.6s;
 }
 
-.w-15 {
-    width: 10%!important;
-}
-.z-1{
-    z-index: 1;
-}
-.z-2 > *{
-    z-index: 2;
-}
-a{
-    color: rgb(240, 240, 240);
-}
-a:hover{
-    color:#fff;
-}
-a > .tech:hover{
-    color:#f07a50;
-}
-a > .stories:hover{
-    color:#57c75a;
-}
-.stories{
-    color:#4caf50;
-}
-.tech{
-    color:#DB6F47;
-}
-@media screen and (min-width: 480px) {
-    .col-md-6-with-border {
-        flex: 0 0 auto;
-        width: 50%;
-        border-right: 1px solid;
-    }
+/* Drift: solo transform, nessuna opacity */
+@keyframes orbDrift {
+  0%   { transform: translate(0px,    0px)   scale(1);    }
+  25%  { transform: translate(40px,  -35px)  scale(1.05); }
+  50%  { transform: translate(-15px,  50px)  scale(0.96); }
+  75%  { transform: translate(30px,   20px)  scale(1.03); }
+  100% { transform: translate(0px,    0px)   scale(1);    }
 }
 
-.list-group-item{
-    background-color: #4c4c4c1e;
-    border: 1.5px solid rgba(255,255,255,.125);
+/* FadeIn: solo opacity, nessun transform */
+@keyframes orbFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-li > * {
-    padding: 10px;
+/* ---- Profile watermark (propic) ---- */
+.propic-watermark {
+  position: fixed; bottom: -80px; right: -60px;
+  width: 46vmin; max-width: 360px;
+  opacity: 0; z-index: 0; pointer-events: none;
+  filter: grayscale(1);
+  animation: watermarkIn 1.6s 0.5s var(--ease) forwards;
+}
+@keyframes watermarkIn {
+  from { opacity: 0; transform: translate(30px, 30px); }
+  to   { opacity: 0.07; transform: translate(0, 0); }
+}
+
+/* ---- Page layout (no scroll) ---- */
+.page {
+  position: relative; z-index: 1;
+  height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 1.75rem;
+}
+
+.grid {
+  width: 100%; max-width: 1080px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  align-items: stretch;
+  /* Ensure everything fits without scroll */
+  max-height: calc(100vh - 3.5rem);
+}
+
+/* ---- Glass card base ---- */
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 2rem 2.2rem;
+  position: relative; overflow: hidden;
+
+  opacity: 0; transform: translateY(30px);
+  animation: cardIn .75s var(--ease) forwards;
+}
+.card-hero  { animation-delay: .1s; }
+.card-links { animation-delay: .25s; }
+
+@keyframes cardIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Top-left glass highlight */
+.card-shine {
+  position: absolute; inset: 0; border-radius: 24px; pointer-events: none;
+  background: linear-gradient(135deg, rgba(255,255,255,.08) 0%, transparent 50%);
+}
+
+/* Animated glow line at bottom */
+.card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  height: 2px; width: 45%;
+  background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  border-radius: 2px;
+  animation: glowLine 3.5s ease-in-out infinite;
+}
+@keyframes glowLine {
+  0%,100% { width: 30%; opacity: .3; }
+  50%      { width: 65%; opacity: .85; }
+}
+
+.card:hover {
+  border-color: rgba(255,255,255,.22);
+  transition: border-color .3s var(--ease);
+}
+
+/* Hero card: flex colonna centrata verticalmente */
+.card-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* ---- Logo LiM — sfondo globale, alto a sinistra ---- */
+.hero-logo-bg {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: clamp(60px, 9vmin, 110px);
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  animation: logoBgIn 1.2s 0.3s var(--ease) forwards;
+}
+@keyframes logoBgIn {
+  from { opacity: 0; transform: translate(-8px, -8px); }
+  to   { opacity: 0.22; transform: translate(0, 0); }
+}
+
+
+.name-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  margin-bottom: 1.2rem;
+  animation: slideUp .6s .3s var(--ease) both;
+}
+
+.name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 3.8vw, 3.1rem);
+  font-weight: 700; letter-spacing: -.025em; line-height: 1.05;
+}
+
+.aka {
+  font-size: .75rem;
+  color: var(--text-muted);
+  line-height: 1;
+  padding-top: .3rem;   /* scende leggermente per allinearsi all'alto della scritta */
+  white-space: nowrap;
+}
+
+.accent { color: var(--orange-light); font-weight: 600; }
+
+.bio {
+  font-size: .87rem; line-height: 1.7;
+  color: rgba(255,255,255,.68);
+  margin-bottom: 1.4rem;
+  animation: slideUp .6s .5s var(--ease) both;
+}
+
+/* Skills */
+.skills {
+  display: flex; flex-wrap: wrap; gap: .45rem;
+  animation: slideUp .6s .6s var(--ease) both;
+}
+
+.skill-tag {
+  display: inline-flex; align-items: center; gap: .35rem;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 100px;
+  padding: .3rem .85rem;
+  font-size: .75rem; font-weight: 500;
+  color: rgba(255,255,255,.78);
+  transition: background .25s, border-color .25s, color .25s, transform .25s;
+  cursor: default;
+}
+.skill-tag i { font-size: .7rem; }
+.skill-tag:hover {
+  background: var(--orange-dim);
+  border-color: var(--orange-border);
+  color: var(--orange-light);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* ---- Links card ---- */
+.card-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.link-group {
+  padding: .95rem 1.3rem;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  transition: background .25s;
+}
+.link-group:last-child { border-bottom: none; }
+
+.link-group:hover {
+  background: rgba(255,255,255,.055);
+}
+
+@keyframes groupIn {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.group-title {
+  font-size: .63rem; font-weight: 700;
+  letter-spacing: .13em; text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: .7rem;
+}
+
+.nav-link {
+  display: flex; align-items: center; gap: .75rem;
+  /* More vertical space between links */
+  padding: .5rem 0;
+  text-decoration: none;
+  color: rgba(255,255,255,.78);
+  font-size: .84rem; font-weight: 500;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  transition: color .22s, padding-left .22s;
+}
+.nav-link:last-child { border-bottom: none; padding-bottom: 0; }
+
+.nav-link i {
+  width: 18px; text-align: center; font-size: .9rem;
+  color: var(--text-muted); flex-shrink: 0;
+  transition: color .22s, transform .22s;
+}
+.nav-link:hover              { color: #fff; padding-left: 5px; }
+.nav-link:hover i            { color: var(--orange-light); transform: scale(1.2); }
+
+.badge {
+  margin-left: auto; flex-shrink: 0;
+  font-size: .6rem; font-weight: 700;
+  padding: .18rem .55rem; border-radius: 100px; letter-spacing: .04em;
+}
+.badge-tech    { background: rgba(240,122,80,.14);  border: 1px solid rgba(240,122,80,.3);  color: var(--orange-light); }
+.badge-stories { background: rgba(76,175,80,.14);   border: 1px solid rgba(76,175,80,.3);   color: #81c784; }
+.badge-oss     { background: rgba(100,149,237,.14); border: 1px solid rgba(100,149,237,.3); color: #90b0f0; }
+
+/* ---- Shared keyframes ---- */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 720px) {
+  html, body { overflow: auto; }
+  .grid { grid-template-columns: 1fr; max-height: none; }
+  .card { padding: 1.6rem 1.5rem; }
+  .orb-1 { width: 280px; height: 280px; }
+  .orb-2 { width: 220px; height: 220px; }
+  .orb-3 { display: none; }
 }
