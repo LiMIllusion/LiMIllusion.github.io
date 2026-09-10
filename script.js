@@ -33,18 +33,6 @@ const CONFIG = {
       title: "Scrittura",
       links: [
         {
-          icon: "fa-solid fa-newspaper",
-          label: "Tutti i post che ho scritto",
-          href: "#",
-        },
-        {
-          icon: "fa-brands fa-hashnode",
-          label: "Hashnode — articoli tech",
-          href: "https://limillusion.hashnode.dev/",
-          badge: "Tech",
-          badgeClass: "badge-tech",
-        },
-        {
           icon: "fa-brands fa-medium",
           label: "Medium — le mie stories",
           href: "https://medium.com/@limillusion",
@@ -63,22 +51,6 @@ const CONFIG = {
           href: "https://www.github.com/limillusion",
           badge: "Open Source",
           badgeClass: "badge-oss",
-        },
-      ],
-    },
-    {
-      emoji: "🌐",
-      title: "Social",
-      links: [
-        {
-          icon: "fa-brands fa-x-twitter",
-          label: "Twitter / X",
-          href: "https://twitter.com/limillusion",
-        },
-        {
-          icon: "fa-brands fa-linkedin",
-          label: "LinkedIn",
-          href: "https://www.linkedin.com/in/limillusion",
         },
       ],
     },
